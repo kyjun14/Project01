@@ -1,6 +1,6 @@
 resource "aws_launch_template" "project01-launch-template" {
     name                   = "project01-launch-template"
-    image_id               = [data.terraform_remote_state.project01_target_ami.outputs.ami_id]
+    image_id               = data.terraform_remote_state.project01_target_ami.outputs.ami_id
     instance_type          = "t2.micro"
     key_name               = "project01-key"
     vpc_security_group_ids = [data.terraform_remote_state.project01_sg.outputs.project01_web_sg, data.terraform_remote_state.project01_sg.outputs.project01_ssh_sg]

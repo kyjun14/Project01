@@ -54,7 +54,7 @@ resource "aws_internet_gateway" "project01_igw" {
     vpc_id = aws_vpc.project01_vpc.id
 
     tags = {
-        Name = "project01_Internet-gateway"
+        Name = "project01_igw"
     }
 }
 
