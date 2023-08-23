@@ -50,7 +50,7 @@ resource "aws_security_group" "project01_web_sg" {
 
 resource "aws_security_group" "project01_lb_sg" {
     name = "project01_lb_sg"
-    description = "Security group for web server"
+    description = "Security group for ALB"
     vpc_id = data.terraform_remote_state.project01_vpc.outputs.vpc_id
 
     ingress {
@@ -99,7 +99,7 @@ resource "aws_security_group" "project01_lb_sg" {
     }
 
     tags = {
-      Name = "project01_ALB_sg"
+      Name = "project01_lb_sg"
     }
 }
 

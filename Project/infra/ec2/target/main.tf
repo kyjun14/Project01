@@ -3,9 +3,9 @@ resource "aws_instance" "project01_target" {
     instance_type = "t2.micro"
     key_name = "project01-key"
     vpc_security_group_ids = [data.terraform_remote_state.project01_sg.outputs.project01_web_sg, data.terraform_remote_state.project01_sg.outputs.project01_ssh_sg]
-    subnet_id = data.terraform_remote_state.project01_vpc.outputs.public_subnet2a
+    subnet_id = data.terraform_remote_state.project01_vpc.outputs.private_subnet2a
     availability_zone = "ap-northeast-2a"
-    associate_public_ip_address = true
+    associate_public_ip_address = false
     iam_instance_profile = "project01-codedeploy-ec2-role"
 
     tags = {

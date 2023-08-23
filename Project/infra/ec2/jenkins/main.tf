@@ -7,7 +7,7 @@ resource "aws_instance" "project01_jenkins" {
     subnet_id = data.terraform_remote_state.project01_vpc.outputs.private_subnet2a
     availability_zone = "ap-northeast-2a"
     associate_public_ip_address = false
-    
+    private_ip = "10.1.128.100"
 
     tags = {
         Name = "project01-jenkins"
