@@ -8,6 +8,8 @@ resource "aws_instance" "project01_target" {
     associate_public_ip_address = false
     iam_instance_profile = "project01-codedeploy-ec2-role"
 
+    user_data = "${file("install.sh")}"
+
     tags = {
         Name = "project01_target"
     }

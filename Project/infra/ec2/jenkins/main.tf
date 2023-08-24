@@ -9,6 +9,8 @@ resource "aws_instance" "project01_jenkins" {
     associate_public_ip_address = false
     private_ip = "10.1.128.100"
 
+    user_data = "${file("install.sh")}"
+                
     tags = {
         Name = "project01-jenkins"
     }
