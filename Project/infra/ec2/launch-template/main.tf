@@ -5,7 +5,7 @@ resource "aws_launch_template" "project01-launch-template" {
     key_name               = "project01-key"
     vpc_security_group_ids = [data.terraform_remote_state.project01_sg.outputs.project01_web_sg, data.terraform_remote_state.project01_sg.outputs.project01_ssh_sg]
     iam_instance_profile {
-        name = "project01-codedeploy-ec2-role"
+        name = "project01-code-deploy-ec2-role"
     }
 
     tags = {

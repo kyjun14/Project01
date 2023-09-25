@@ -6,7 +6,7 @@ resource "aws_instance" "project01_target" {
     subnet_id = data.terraform_remote_state.project01_vpc.outputs.private_subnet2a
     availability_zone = "ap-northeast-2a"
     associate_public_ip_address = false
-    iam_instance_profile = "project01-codedeploy-ec2-role"
+    iam_instance_profile = "project01-code-deploy-ec2-role"
 
     user_data = "${file("install.sh")}"
 
